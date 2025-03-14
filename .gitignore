@@ -1,0 +1,4 @@
+**/*.meta.js
+**/*.user.js
+!**/*_latest.dev.user.js
+!**/*_latest.user.js
