@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name       [FT] LinkedIn (DEV version)
 // @namespace  https://github.com/folktroll/
-// @version    25.3.14.1701
+// @version    25.3.14.1721
 // @author     Folky
 // @license    MIT
 // @icon       https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Linkedin_icon.svg/240px-Linkedin_icon.svg.png
@@ -1416,6 +1416,10 @@
 	        const date = e.querySelectorAll("dd.body-small span.body-small");
 	        const period = date?.length > 0 ? `${date[0].textContent}${date[1].textContent}` : "";
 	        formatStr += formatLine(company, position, period);
+	      }
+	      if (formatStr === "") {
+	        console.log("Проблем с извличането. exp:", exp);
+	        return;
 	      }
 	      curProf.name = doc?.querySelector("h1.heading-large")?.textContent?.trim() ?? "Unknown";
 	      curProf.copyStr = formatResult(formatStr);
